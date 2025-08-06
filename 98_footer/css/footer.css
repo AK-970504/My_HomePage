@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+footer {
+	background-color: rgba(255, 125, 225, 0.5);
+	text-align: center;
+	margin-bottom: 10px;
+}
+footer a {
+	margin: 5px 10px;
+}
+footer a:hover {
+	background-color: rgba(255, 125, 225, 0.7);
+}
