@@ -1,3 +1,9 @@
+window.addEventListener("load", () => {
+	const loader = document.getElementById("loader");
+	if (loader) {
+		loader.classList.add("hidden");
+	}
+});
 //header.htmlを読み込んで挿入
 fetch('/97_header/header.html').then(res => res.text()).then(data => {
 	document.getElementById('header_placeholder').innerHTML = data;

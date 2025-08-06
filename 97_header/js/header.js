@@ -269,99 +269,110 @@ function initBurgerMenu() {
 //スライダー
 function initSlider() {
 	console.log("スライダー初期化");
-	function preloadSliderImages() {
+	function preloadSliderImages(callback) {
 		const images = document.querySelectorAll('.slider img');
+		let loadedCount = 0;
+		if (images.length === 0) {
+			callback();
+			return;
+		}
 		images.forEach(img => {
-			const src = img.getAttribute('src');
-			if (src) {
-				const preloadImg = new Image();
-				preloadImg.src = src;
+			if (img.complete) {
+				img.classList.add('loaded');
+				loadedCount++;
+				if (loadedCount === images.length) callback();
+			} else {
+				img.onload = () => {
+					img.classList.add('loaded');
+					loadedCount++;
+					if (loadedCount === images.length) callback();
+				};
 			}
 		});
 	};
-	preloadSliderImages();
-	const sliderImages = document.querySelector(".slider_images");
-	const slides = document.querySelectorAll(".slider");
-	const prevBtn = document.getElementById("prev");
-	const nextBtn = document.getElementById("next");
-	const sliderWindow = document.querySelector('.slider_window');
-	const totalSlides = slides.length;
-	let currentIndex = 1;
-	if (!sliderImages || totalSlides === 0 || !prevBtn || !nextBtn || !sliderWindow) {
-		console.warn('Slider elements not found');
-		return;
-	}
-	// 7月・8月は背景白＋文字黒に
-	const month = new Date().getMonth() + 1;
-	if (7 <= month && month <= 8) {
-		console.log("夏季モード：背景白＋文字黒");
-		sliderWindow.style.backgroundColor = "rgba(255, 255, 255, 1)";
-		slides.forEach(slide => {
-			const textElements = slide.querySelectorAll('p, span, h2, a');
-			textElements.forEach(el => {
-				el.style.color = "rgba(0, 0, 0, 1)";
+	function initializeAfterImagesLoaded() {
+		const sliderImages = document.querySelector(".slider_images");
+		const slides = document.querySelectorAll(".slider");
+		const prevBtn = document.getElementById("prev");
+		const nextBtn = document.getElementById("next");
+		const sliderWindow = document.querySelector('.slider_window');
+		const totalSlides = slides.length;
+		let currentIndex = 1;
+		if (!sliderImages || totalSlides === 0 || !prevBtn || !nextBtn || !sliderWindow) {
+			console.warn('Slider elements not found');
+			return;
+		}
+		// 7月・8月は背景白＋文字黒に
+		const month = new Date().getMonth() + 1;
+		if (7 <= month && month <= 8) {
+			console.log("夏季モード：背景白＋文字黒");
+			sliderWindow.style.backgroundColor = "rgba(255, 255, 255, 1)";
+			slides.forEach(slide => {
+				const textElements = slide.querySelectorAll('p, span, h2, a');
+				textElements.forEach(el => {
+					el.style.color = "rgba(0, 0, 0, 1)";
+				});
 			});
-		});
-		prevBtn.style.backgroundColor = "rgba(255, 255, 255, 1)";
-		prevBtn.style.color = "rgba(0, 0, 0, 1)";
-		nextBtn.style.backgroundColor = "rgba(255, 255, 255, 1)";
-		nextBtn.style.color = "rgba(0, 0, 0, 1)";
-	}
-	//スライド表示更新
-	function updateSlider(animate = true) {
-		const slide = slides[0];
-		const slideStyles = window.getComputedStyle(slide);
-		const slideWidth = slide.getBoundingClientRect().width;
-		const marginLeft = parseFloat(slideStyles.marginLeft);
-		const marginRight = parseFloat(slideStyles.marginRight);
-		const totalSlideWidth = slideWidth + marginLeft + marginRight;
-		const windowWidth = sliderWindow.offsetWidth;
-		const offset = totalSlideWidth * currentIndex - (windowWidth / 2) + (totalSlideWidth / 2);
-		if (!animate) {
-			sliderImages.style.transition = 'none';
-		} else {
-			sliderImages.style.transition = 'transform 0.5s ease-in-out';
+			prevBtn.style.backgroundColor = "rgba(255, 255, 255, 1)";
+			prevBtn.style.color = "rgba(0, 0, 0, 1)";
+			nextBtn.style.backgroundColor = "rgba(255, 255, 255, 1)";
+			nextBtn.style.color = "rgba(0, 0, 0, 1)";
 		}
-		sliderImages.style.transform = `translateX(-${offset}px)`;
-	}
-	//前へボタン
-	prevBtn.addEventListener("click", () => {
-		currentIndex--;
-		updateSlider();
-		if (currentIndex === 0) {
-			setTimeout(() => {
-				currentIndex = totalSlides - 2;
-				updateSlider(false);
-			}, 500);
+		//スライド表示更新
+		function updateSlider(animate = true) {
+			const slide = slides[0];
+			const slideStyles = window.getComputedStyle(slide);
+			const slideWidth = slide.getBoundingClientRect().width;
+			const marginLeft = parseFloat(slideStyles.marginLeft);
+			const marginRight = parseFloat(slideStyles.marginRight);
+			const totalSlideWidth = slideWidth + marginLeft + marginRight;
+			const windowWidth = sliderWindow.offsetWidth;
+			const offset = totalSlideWidth * currentIndex - (windowWidth / 2) + (totalSlideWidth / 2);
+			sliderImages.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
+			sliderImages.style.transform = `translateX(-${offset}px)`;
 		}
-	});
-	//次へボタン
-	nextBtn.addEventListener("click", () => {
-		currentIndex++;
-		updateSlider();
-		if (currentIndex === totalSlides - 1) {
-			setTimeout(() => {
-				currentIndex = 1;
-				updateSlider(false);
-			}, 500);
-		}
-	});
-	//ウィンドウリサイズ対応
-	window.addEventListener("resize", () => updateSlider(false));
-	//初回表示
-	updateSlider(false);
-	//スクロール時に<header>に[scrolled]クラスを付与
-	const HeaderMain = document.getElementBuId('header_main');
-	if (HeaderMain) {
-		window.addEventListener('scroll', () => {
-			if (window.scrollY > 50) {
-				HeaderMain.classList.add('scrolled');
-			} else {
-				HeaderMain.classList.remove('scrolled');
+		//前へボタン
+		prevBtn.addEventListener("click", () => {
+			currentIndex--;
+			updateSlider();
+			if (currentIndex === 0) {
+				setTimeout(() => {
+					currentIndex = totalSlides - 2;
+					updateSlider(false);
+				}, 500);
 			}
 		});
+		//次へボタン
+		nextBtn.addEventListener("click", () => {
+			currentIndex++;
+			updateSlider();
+			if (currentIndex === totalSlides - 1) {
+				setTimeout(() => {
+					currentIndex = 1;
+					updateSlider(false);
+				}, 500);
+			}
+		});
+		//ウィンドウリサイズ対応
+		window.addEventListener("resize", () => updateSlider(false));
+		//初回表示
+		updateSlider(false);
+		//スクロール時に<header>に[scrolled]クラスを付与
+		const HeaderMain = document.getElementById('header_main');
+		if (HeaderMain) {
+			window.addEventListener('scroll', () => {
+				if (window.scrollY > 50) {
+					HeaderMain.classList.add('scrolled');
+				} else {
+					HeaderMain.classList.remove('scrolled');
+				}
+			});
+		}
 	}
-};
+	preloadSliderImages(() => {
+		initializeAfterImagesLoaded();
+	});
+}
 document.addEventListener("DOMContentLoaded", () => {
 	initSlider();
 	background();
