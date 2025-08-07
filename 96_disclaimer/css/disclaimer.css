@@ -1,0 +1,42 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	user-select: none;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+.layout {
+	display: flex;
+	box-sizing: border-box;
+}
+main {
+	box-sizing: border-box;
+	order: 2;
+}
+.disclaimer_title h3 {
+	margin-bottom: 0.5em;
+}
+.disclaimer_list {
+	margin-left: 1em;
+}
+.disclaimer_list p {
+	margin-left: 1em;
+	margin-bottom: 2em;
+}
+.disclaimer_list p a {
+	color: rgba(0, 0, 255, 1);
+	text-decoration: underline;
+}
+#aside_placeholder {
+	order: 1;
+}
