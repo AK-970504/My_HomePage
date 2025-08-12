@@ -46,4 +46,55 @@ fetch('/99_aside/aside.html').then(res => res.text()).then(data => {
 	asideJS.src = '/99_aside/js/aside.js';
 	document.body.appendChild(asideJS);
 })
-.catch(err => console.error('読み込みエラー:', err));
+document.querySelector('form').addEventListener('submit', function (e) {
+	let messages = [];
+	if (!document.querySelector('input[name="type"]:checked')) {
+		messages.push('お問合せ種別を選択して下さい');
+	}
+	const requiredFields= [
+		{ id: 'name_01', msg: 'お名前(漢字)を入力して下さい'},
+		{ id: 'name_02', msg: 'お名前(カタカナ)を入力して下さい'},
+		{ id: 'message', msg: 'お問合せ内容を入力して下さい'},
+	];
+	requiredFields.forEach(filed => {
+		const el = document.getElementById(filed.id);
+		if (!el.value.trim()) {
+			messages.push(filed.msg);
+		}
+	});
+	const furigana = document.getElementById('name_02').value.trim();
+	if (furigana && !/^[\u30A0-\u30FFー\s]+$/.test(furigana)) {
+		messages.push('フリガナは全角カタカナで入力して下さい')
+	}
+	const email = document.getElementById('email').value.trim();
+	const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	if(!email) {
+		messages.push('メールアドレスを入力して下さい');
+	} else if (!emailPattern.test(email)) {
+		messages.push('正しいメールアドレスの形式で入力して下さい');
+	}
+	if (0 < messages.length) {
+		alert('【以下の項目を入力して下さい】\n・' + messages.join('\n・'));
+		e.preventDefault();
+	}
+})
+document.querySelectorAll('input[type="file"]').forEach(input => {
+	input.addEventListener('change', e => {
+		const file = e.target.files[0];
+		const label = document.querySelector(`label[for="${input.id}"]`);
+		if (file && file.type.startsWith('image/')) {
+			const reader = new FileReader();
+			reader.onload = ev => {
+				label.innerHTML = `<img src="${ev.target.result}" alt="preview">`;
+			};
+			reader.readAsDataURL(file);
+		} else {
+			label.innerHTML = '画像選択';
+		}
+	});
+});
+if (location.search.includes('sent=1')) {
+	window.scrollTo(0, 0);
+	alert('送信が完了しました');
+	history.replaceState(null, '', location.pathname);
+}
