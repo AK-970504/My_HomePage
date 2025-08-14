@@ -46,38 +46,49 @@ fetch('/99_aside/aside.html').then(res => res.text()).then(data => {
 	asideJS.src = '/99_aside/js/aside.js';
 	document.body.appendChild(asideJS);
 })
+//記入項目に関する事項
 document.querySelector('form').addEventListener('submit', function (e) {
-	let messages = [];
+	//デバッグ用、動作確認後に削除
+	e.preventDefault();
+	let errors = [];
+	//1.お問合せ種別
 	if (!document.querySelector('input[name="type"]:checked')) {
-		messages.push('お問合せ種別を選択して下さい');
+		errors.push('・お問合せ種別を選択して下さい');
 	}
-	const requiredFields= [
-		{ id: 'name_01', msg: 'お名前(漢字)を入力して下さい'},
-		{ id: 'name_02', msg: 'お名前(カタカナ)を入力して下さい'},
-		{ id: 'message', msg: 'お問合せ内容を入力して下さい'},
-	];
-	requiredFields.forEach(filed => {
-		const el = document.getElementById(filed.id);
-		if (!el.value.trim()) {
-			messages.push(filed.msg);
-		}
-	});
-	const furigana = document.getElementById('name_02').value.trim();
-	if (furigana && !/^[\u30A0-\u30FFー\s]+$/.test(furigana)) {
-		messages.push('フリガナは全角カタカナで入力して下さい')
+	//2.お名前
+	const name01 = document.getElementById('name_01').value.trim();
+	if (!name01) {
+		errors.push('・お名前を入力して下さい');
 	}
+	//3.フリガナ
+	const name02 = document.getElementById('name_02').value.trim();
+	if (!name02) {
+		errors.push('・お名前(カタカナ)を入力して下さい');
+	} else if (!/^[\u30A0-\u30FFー\s]+$/.test(name02)) {
+		errors.push('・フリガナは全角カタカナで入力して下さい');
+	}
+	//4.メールアドレス
 	const email = document.getElementById('email').value.trim();
 	const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 	if(!email) {
-		messages.push('メールアドレスを入力して下さい');
+		errors.push('・メールアドレスを入力して下さい');
 	} else if (!emailPattern.test(email)) {
-		messages.push('正しいメールアドレスの形式で入力して下さい');
+		errors.push('・正しいメールアドレスの形式で入力して下さい');
 	}
-	if (0 < messages.length) {
-		alert('【以下の項目を入力して下さい】\n・' + messages.join('\n・'));
-		e.preventDefault();
+	//5.お問合せ内容
+	const messageValue = document.getElementById('message').value.trim();
+	if(!messageValue) {
+		errors.push('・お問合せ内容を入力して下さい');
+	}
+	console.log(errors);
+	//エラーがあればまとめて表示
+	if (0 < errors.length) {
+		alert('【以下の項目を入力して下さい】\n' + errors.join('\n'));
+	} else {
+		this.submit();
 	}
 })
+//画像選択に関する事項
 document.querySelectorAll('input[type="file"]').forEach(input => {
 	input.addEventListener('change', e => {
 		const file = e.target.files[0];

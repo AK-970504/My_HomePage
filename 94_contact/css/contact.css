@@ -44,7 +44,26 @@ main {
 .type_item span, .name_01_item span, .name_02_item span, .email_item span, .message_item span, .picture_item span {
 	color: rgba(255, 0, 0, 1);
 }
-.type_item_list {
+.type-item-label {
+	display: flex;
+	gap: 10px;
+	flex-wrap: nowrap;
+}
+.type_item_list_01 {
+	display: block;
+	width: 25ch;
+	font-size: 25px;
+	margin: 0 10px;
+}
+.type_item_list_02 {
+	display: block;
+	width: 16ch;
+	font-size: 25px;
+	margin: 0 10px;
+}
+.type_item_list_03 {
+	display: block;
+	width: 13ch;
 	font-size: 25px;
 	margin: 0 10px;
 }
@@ -92,18 +111,24 @@ input[type="file"] {
 	margin-top: 20px;
 	text-align: center;
 }
-button {
+.form_submit button {
 	background-color: rgba(125, 255, 0,1);
 	color: rgba(255, 255, 255, 1);
 	padding: 10px 20px;
+	margin-bottom: 20px;
 	font-size: 20px;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
 	transition: background-color 0.2s;
+	box-shadow: 0 5px 0 rgba(0, 200, 0, 1);
 }
-button:hover {
+.form_submit button:hover {
 	background-color: rgba(0, 255, 75, 1);
+}
+.form_submit button:active {
+	transform: translateY(2px);
+	box-shadow: 0 2px 0 rgba(0, 200, 0, 1);
 }
 #aside_placeholder {
 	order: 1;

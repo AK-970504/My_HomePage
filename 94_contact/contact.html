@@ -34,55 +34,60 @@
 				<div class="contact-List">
 					<form action="/94_contact/php/contact.php" method="POST" enctype="multipart/form-data">
 						<div class="type_list">
-							<label class="type_item">
+							<div class="type_item">
 								お問合せ種別
 								<span>
 									*
 								</span>
-							</label>
-							<label class="type_item_list">
-								<input id="type_01" type="radio" name="type" value="プログラミングについて" autocomplete="off">
-								プログラミングについて
-							</label>
-							<label class="type_item_list">
-								<input id="type_02" type="radio" name="type" value="フードについて" autocomplete="off">
-								フードについて
-							</label>
-							<label class="type_item_list">
-								<input id="type_03" type="radio" name="type" value="日記について" autocomplete="off">
-								日記について
-							</label>
-							<br>
-							<label class="type_item_list">
-								<input id="type_04" type="radio" name="type" value="テンプレート各種について" autocomplete="off">
-								テンプレート各種について
-							</label>
-							<label class="type_item_list">
-								<input id="type_05" type="radio" name="type" value="エンタメについて" autocomplete="off">
-								エンタメについて
-							</label>
-							<label class="type_item_list">
-								<input id="type_06" type="radio" name="type" value="その他" autocomplete="off">
-								その他
-							</label>
+							</div>
+							<div class="type_label">
+								<div class="type-item-label">
+									<label class="type_item_list_01">
+										<input id="type_01" type="radio" name="type" value="プログラミングについて" autocomplete="off">
+										プログラミングについて
+									</label>
+									<label class="type_item_list_02">
+										<input id="type_02" type="radio" name="type" value="フードについて" autocomplete="off">
+										フードについて
+									</label>
+									<label class="type_item_list_03">
+										<input id="type_03" type="radio" name="type" value="日記について" autocomplete="off">
+										日記について
+									</label>
+								</div>
+								<div class="type-item-label">
+									<label class="type_item_list_01">
+										<input id="type_04" type="radio" name="type" value="テンプレート各種について" autocomplete="off">
+										テンプレート各種について
+									</label>
+									<label class="type_item_list_02">
+										<input id="type_05" type="radio" name="type" value="エンタメについて" autocomplete="off">
+										エンタメについて
+									</label>
+									<label class="type_item_list_03">
+										<input id="type_06" type="radio" name="type" value="その他" autocomplete="off">
+										その他
+									</label>
+								</div>
+							</div>
 						</div>
 						<div class="name_01_list">
-							<label class="name_01_item" for="name">
+							<label class="name_01_item" for="name_01">
 								お名前
 								<span>
 									*
 								</span>
 							</label>
-							<input id="name_01" type="text" name="name" placeholder="例) 山田　太郎" autocomplete="off">
+							<input id="name_01" type="text" name="name_01" placeholder="例) 山田　太郎" autocomplete="off">
 						</div>
 						<div class="name_02_list">
-							<label class="name_02_item" for="name">
+							<label class="name_02_item" for="name_02">
 								フリガナ
 								<span>
 									*
 								</span>
 							</label>
-							<input id="name_02" type="text" name="name_kana" placeholder="例) ヤマダ　タロウ" autocomplete="off">
+							<input id="name_02" type="text" name="name_02" placeholder="例) ヤマダ　タロウ" autocomplete="off">
 						</div>
 						<div class="email_list">
 							<label class="email_item" for="email">
@@ -100,12 +105,12 @@
 									*
 								</span>
 							</label>
-							<textarea id="message" type="text" name="message" placeholder="お問合せ内容を記入して下さい" autocomplete="off"></textarea>
+							<textarea id="message" name="message" placeholder="お問合せ内容を記入して下さい" autocomplete="off"></textarea>
 						</div>
 						<div class="picture_list">
-							<label class="picture_item" for="picture">
+							<div class="picture_item">
 								画像
-							</label>
+							</div>
 							<label class="picture_item_list" for="picture_01">
 								画像選択
 							</label>
