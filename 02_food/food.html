@@ -1,293 +1,506 @@
 <!DOCTYPE html>
 <html>
-	<head prefix="#">
+	<head>
 		<meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-        <meta name="robots" content="ALL">
-        <title>
-            日記
-        </title>
-        <meta name="description" content="何気ない日常の日記">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="index.html">
-        <meta property="og:image" content="img/org_img.jpg">
-        <meta property="og:title" content="日記">
-        <meta property="og:description" content="何気ない日常の日記">
-        <meta property="og:locale" content="ja_JP">
-        <link rel="shortcut icon" type="image/vnd.microsoft.ico" href="img/fav-icon.jpg">
-        <link rel="apple-touch-icon-precomposed" href="img/fav-icon.jpg">
-        <link rel="stylesheet" type="text/css" media="ALL" href="css/base.css">
-		<script src="js/format.js" defer>
-        </script>
-    </head>
+		<meta name="viewport" content="width=device-width">
+		<meta name="robots" content="ALL">
+		<title>
+			food
+		</title>
+		<meta name="description" content="food">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="food.html">
+		<meta property="og:image" content="img/org_img.jpg">
+		<meta property="og:title" content="food">
+		<meta property="og:description" content="food">
+		<meta property="og:locale" content="ja_JP">
+		<link rel="icon" type="image/png" href="/img/fav-icon.png?v1">
+		<link rel="apple-touch-icon-precomposed" href="/img/fav-icon.png">
+		<link rel="stylesheet" type="text/css" media="ALL" href="/02_food/css/food.css">
+		<script src="/02_food/js/food.js" defer>
+		</script>
+	</head>
 	<body>
-		<header>
-			<div class="header-top">
-				<div class="header-top-title">
-					<h2>
-						NIBBLE NOTES
-					</h2>
-					<p>
-						Delight in every laver.
-					</p>
-				</div>
-				<div class="burger" id="burger">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-				<nav class="header-menu" id="header-menu">
-					<ul class="burger-list">
+		<!--header挿入ポイント-->
+		<div id="header_placeholder">
+		</div>
+		<div class="layout">
+			<main>
+				<div class="food_menu_list">
+					<ul>
 						<li>
-							<a class="header-menu-list" href="#">
-								HOME
+							<a href="#">
+								和食
 							</a>
 						</li>
 						<li>
-							<a class="header-menu-list" href="#">
-								PROFILE
+							<a href="#">
+								洋食
 							</a>
 						</li>
 						<li>
-							<a class="header-menu-list" href="#">
-								NEWS
+							<a href="#">
+								中華
 							</a>
 						</li>
 						<li>
-							<a class="header-menu-list" href="#">
-								RANKING
+							<a href="#">
+								スイーツ
 							</a>
 						</li>
 						<li>
-							<a class="header-menu-list" href="#">
-								CONTACT
+							<a href="#">
+								お酒
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								その他
 							</a>
 						</li>
 					</ul>
-				</nav>
-			</div>
-			<div class="header-middle">
-				<button id="prev" class="arrow">
-					&lt;
-				</button>
-				<div class="slider-window">
-					<div class="slider-images">
-						<img src="img/img05.jpg" class="slider clone" />
-						<img src="img/img01.jpg" class="slider" />
-						<img src="img/img02.jpg" class="slider" />
-						<img src="img/img03.jpg" class="slider" />
-						<img src="img/img04.jpg" class="slider" />
-						<img src="img/img05.jpg" class="slider" />
-						<img src="img/img01.jpg" class="slider clone" />
-					</div>
 				</div>
-				<button id="next" class="arrow">
-					&gt;
-				</button>
-			</div>
-			<div class="header-bottom">
-				<ul>
-					<li>
-						<a class="menu-list" href="#">
-							和食
-						</a>
-						<a class="menu-list" href="#">
-							洋食
-						</a>
-						<a class="menu-list" href="#">
-							中華
-
-						</a>
-						<a class="menu-list" href="#">
-							スイーツ
-
-						</a>
-						<a class="menu-list" href="#">
-							お酒
-
-						</a>
-						<a class="menu-list" href="#">
-							その他
-
-						</a>
-					</li>
-				</ul>
-			</div>
-		</header>
-		<div class="layout">
-			<main>
-				<div class="new-arrivals">
-					<div class="news-title">
-						<h2>
-							新着情報
-						</h2>
-					</div>
-					<div class="news-list">
-						<ul>
-							<li>
-								<a id="news-list00" class="news-list01" href="#">
-									<span>●</span>
-									定食
-									<br>
-									　[2025-06-20]
-								</a>
-							</li>
-							<li>
-								<a id="news-list00" class="news-list02" href="#">
-									<span>●</span>
-									定食
-									<br>
-									　[2025-06-21]
-								</a>
-							</li>
-							<li>
-								<a id="news-list00" class="news-list02" href="#">
-									<span>●</span>
-									定食
-									<br>
-									　[2025-06-22]
-								</a>
-							</li>
-							<li>
-								<a id="news-list00" class="news-list02" href="#">
-									<span>●</span>
-									定食
-									<br>
-									　[2025-06-23]
-								</a>
-							</li>
-							<li>
-								<a id="news-list00" class="news-list02" href="#">
-									<span>●</span>
-									定食
-									<br>
-									　[2025-06-24]
-								</a>
-							</li>
-							<li>
-								<a id="news-list00" class="news-list02" href="#">
-									<span>●</span>
-									定食
-									<br>
-									　[2025-06-25]
-								</a>
-							</li>
-							<li>
-								<a id="news-list00" class="news-list02" href="#">
-									<span>●</span>
-									定食
-									<br>
-									　[2025-06-26]
-								</a>
-							</li>
-							<li>
-								<a id="news-list00" class="news-list02" href="#">
-									<span>●</span>
-									定食
-									<br>
-									　[2025-06-27]
-								</a>
-							</li>
-							<li>
-								<a id="news-list00" class="news-list02" href="#">
-									<span>●</span>
-									定食
-									<br>
-									　[2025-06-28]
-								</a>
-							</li>
-							<li>
-								<a id="news-list00" class="news-list02" href="#">
-									<span>●</span>
-									定食
-									<br>
-									　[2025-06-29]
-								</a>
-							</li>
-							<li>
-								<a id="news-list00" class="news-list02" href="#">
-									<span>●</span>
-									定食
-									<br>
-									　[2025-06-30]
-								</a>
-							</li>
-						</ul>
-					</div>
+				<div class="news_list">
+					<section class="food">
+						<div class="food_titye">
+							<h1>
+								新着情報
+							</h1>
+						</div>
+					</section>
+					<section id="list" class="food_list">
+						<div class="cards">
+							<article class="card">
+								<div class="card_thumb" id="card_thumb_250826_01">
+									<span class="price">
+										～¥1,200
+									</span>
+								</div>
+								<div class="card_body">
+									<h3 class="card_title_new">
+										Re:Polka
+									</h3>
+									<p class="card_content">
+										<strong>
+											チーズケーキ
+										</strong>
+										スイーツ
+										<br>
+										札幌市 中央区
+										<br>
+										地下鉄南北線 すすきの駅から徒歩2分
+										<br>
+										地下鉄東豊線 豊水すすきの駅から徒歩2分
+									</p>
+									<div class="card_footer">
+										<a class="btn" href="detail_ramen.html">
+											詳細を見る
+										</a>
+										<time datetime="2025-08-26">
+											2025/08/26
+										</time>
+									</div>
+								</div>
+							</article>
+							<article class="card">
+								<div class="card_thumb" id="card_thumb_250820_01">
+									<span class="price">
+										～¥1,200
+									</span>
+								</div>
+								<div class="card_body">
+									<h3 class="card_title_new">
+										卵と私 札幌アピア店
+									</h3>
+									<p class="card_content">
+										<strong>
+											オムライス
+										</strong>
+										洋食
+										<br>
+										札幌市 中央区
+										<br>
+										札幌駅から徒歩5分
+									</p>
+									<div class="card_footer">
+										<a class="btn" href="detail_ramen.html">
+											詳細を見る
+										</a>
+										<time datetime="2025-08-20">
+											2025/08/20
+										</time>
+									</div>
+								</div>
+							</article>
+							<article class="card">
+								<div class="card_thumb" id="card_thumb_250813_01">
+									<span class="price">
+										～¥1,200
+									</span>
+								</div>
+								<div class="card_body">
+									<h3 class="card_title_new">
+										居酒屋咲か蔵
+									</h3>
+									<p class="card_content">
+										<strong>
+											すき焼き
+										</strong>
+										洋食
+										<br>
+										札幌市 中央区
+										<br>
+										札幌駅から徒歩5分
+									</p>
+									<div class="card_footer">
+										<a class="btn" href="detail_ramen.html">
+											詳細を見る
+										</a>
+										<time datetime="2025-08-13">
+											2025/08/13
+										</time>
+									</div>
+								</div>
+							</article>
+							<article class="card">
+								<div class="card_thumb" id="card_thumb_250426_01">
+									<span class="price">
+										～¥1,200
+									</span>
+								</div>
+								<div class="card_body">
+									<h3 class="card_title_old">
+										スナックI'll
+									</h3>
+									<p class="card_content">
+										<strong>
+											厳選ナイアガラワイン
+										</strong>
+										お酒
+										<br>
+										富良野市
+										<br>
+										富良野駅から徒歩5分
+									</p>
+									<div class="card_footer">
+										<a class="btn" href="detail_ramen.html">
+											詳細を見る
+										</a>
+										<time datetime="2025-04-26">
+											2025/04/26
+										</time>
+									</div>
+								</div>
+							</article>
+							<article class="card">
+								<div class="card_thumb" id="card_thumb_250713_01">
+									<span class="price">
+										～¥1,200
+									</span>
+								</div>
+								<div class="card_body">
+									<h3 class="card_title_old">
+										天然とんこつラーメン専門店 一蘭
+									</h3>
+									<p class="card_content">
+										<strong>
+											天然とんこつラーメン
+										</strong>中華
+										<br>
+										札幌市 中央区
+										<br>
+										地下鉄南北線すすきの駅から徒歩5分
+									</p>
+									<div class="card_footer">
+										<a class="btn" href="detail_ramen.html">
+											詳細を見る
+										</a>
+										<time datetime="2025-07-13">
+											2025/07/13
+										</time>
+									</div>
+								</div>
+							</article>
+							<article class="card">
+								<div class="card_thumb" id="card_thumb_250118_01">
+									<span class="price">
+										～¥1,200
+									</span>
+								</div>
+								<div class="card_body">
+									<h3 class="card_title_old">
+										ラーメンねるら
+									</h3>
+									<p class="card_content">
+										<strong>
+											醤油ラーメン
+										</strong>
+										中華
+										<br>
+										札幌市 中央区
+										<br>
+										地下鉄東西線西11丁目駅から徒歩5分
+									</p>
+									<div class="card_footer">
+										<a class="btn" href="detail_ramen.html">
+											詳細を見る
+										</a>
+										<time datetime="2025-01-18">
+											2025/01/18
+										</time>
+									</div>
+								</div>
+							</article>
+							<article class="card">
+								<div class="card_thumb" id="card_thumb_241216_01">
+									<span class="price">
+										～¥1,200
+									</span>
+								</div>
+								<div class="card_body">
+									<h3 class="card_title_old">
+										ラーメンさんぱち
+									</h3>
+									<p class="card_content">
+										<strong>
+											味噌拉麺
+										</strong>
+										中華
+										<br>
+										稚内市
+										<br>
+										JR南稚内駅から車5分
+									</p>
+									<div class="card_footer">
+										<a class="btn" href="detail_ramen.html">
+											詳細を見る
+										</a>
+										<time datetime="2024-12-16">
+											2024/12/16
+										</time>
+									</div>
+								</div>
+							</article>
+							<article class="card">
+								<div class="card_thumb" id="card_thumb_241210_01">
+									<span class="price">
+										～¥1,200
+									</span>
+								</div>
+								<div class="card_body">
+									<h3 class="card_title_old">
+										ラーメン大王本店
+									</h3>
+									<p class="card_content">
+										<strong>
+											炒麺
+										</strong>
+										中華
+										<br>
+										稚内市
+										<br>
+										稚内駅から徒歩10分
+									</p>
+									<div class="card_footer">
+										<a class="btn" href="detail_ramen.html">
+											詳細を見る
+										</a>
+										<time datetime="2024-12-10">
+											2024/12/10
+										</time>
+									</div>
+								</div>
+							</article>
+							<article class="card">
+								<div class="card_thumb" id="card_thumb_241125_01">
+									<span class="price">
+										～¥1,200
+									</span>
+								</div>
+								<div class="card_body">
+									<h3 class="card_title_old">
+										えび幸寿司
+									</h3>
+									<p class="card_content">
+										<strong>
+											生散し(ランチ)
+										</strong>
+										和食
+										<br>
+										枝幸郡浜頓別町
+										<br>
+										道の駅から徒歩5分
+									</p>
+									<div class="card_footer">
+										<a class="btn" href="detail_ramen.html">
+											詳細を見る
+										</a>
+										<time datetime="2024-11-25">
+											2024/11/25
+										</time>
+									</div>
+								</div>
+							</article>
+							<article class="card">
+								<div class="card_thumb" id="card_thumb_241122_02">
+									<span class="price">
+										～¥1,200
+									</span>
+								</div>
+								<div class="card_body">
+									<h3 class="card_title_old">
+										う美蔵
+									</h3>
+									<p class="card_content">
+										<strong>
+											醤油ラーメン
+										</strong>
+										中華
+										<br>
+										枝幸郡枝幸町
+										<br>
+										道の駅から車15分
+									</p>
+									<div class="card_footer">
+										<a class="btn" href="detail_ramen.html">
+											詳細を見る
+										</a>
+										<time datetime="2024-11-22">
+											2024/11/22
+										</time>
+									</div>
+								</div>
+							</article>
+							<article class="card">
+								<div class="card_thumb" id="card_thumb_241122_01">
+									<span class="price">
+										～¥1,200
+									</span>
+								</div>
+								<div class="card_body">
+									<h3 class="card_title_old">
+										う美蔵
+									</h3>
+									<p class="card_content">
+										<strong>
+											鶏唐揚げ定食
+										</strong>
+										和食
+										<br>
+										枝幸郡枝幸町
+										<br>
+										道の駅から車15分
+									</p>
+									<div class="card_footer">
+										<a class="btn" href="detail_ramen.html">
+											詳細を見る
+										</a>
+										<time datetime="2024-11-22">
+											2024/11/22
+										</time>
+									</div>
+								</div>
+							</article>
+							<article class="card">
+								<div class="card_thumb" id="card_thumb_241119_01">
+									<span class="price">
+										～¥1,200
+									</span>
+								</div>
+								<div class="card_body">
+									<h3 class="card_title_old">
+										ニュー幸林
+									</h3>
+									<p class="card_content">
+										<strong>
+											選べる丼セット(韃靼そば+豚丼)
+										</strong>
+										和食
+										<br>
+										枝幸郡枝幸町
+										<br>
+										道の駅から徒歩10分
+									</p>
+									<div class="card_footer">
+										<a class="btn" href="detail_ramen.html">
+											詳細を見る
+										</a>
+										<time datetime="2024-11-19">
+											2024/11/19
+										</time>
+									</div>
+								</div>
+							</article>
+							<article class="card">
+								<div class="card_thumb" id="card_thumb_241117_01">
+									<span class="price">
+										～¥1,200
+									</span>
+								</div>
+								<div class="card_body">
+									<h3 class="card_title_old">
+										[TSUKEMEN ICHI]
+									</h3>
+									<p class="card_content">
+										<strong>
+											特上昆布水つけ麺
+										</strong>
+										和食
+										<br>
+										札幌市 中央区
+										<br>
+										地下鉄南北線すすきの駅から徒歩5分
+									</p>
+									<div class="card_footer">
+										<a class="btn" href="#">
+											詳細を見る
+										</a>
+										<time datetime="2024-11-17">
+											2024/11/17
+										</time>
+									</div>
+								</div>
+							</article>
+							<article class="card">
+								<div class="card_thumb" id="card_thumb_241116_01">
+									<span class="price">
+										～¥1,200
+									</span>
+								</div>
+								<div class="card_body">
+									<h3 class="card_title_old">
+										天然とんこつラーメン専門店 一蘭
+									</h3>
+									<p class="card_content">
+										<strong>
+											天然とんこつラーメン
+										</strong>
+										中華
+										<br>
+										札幌市 中央区
+										<br>
+										地下鉄南北線すすきの駅から徒歩5分
+									</p>
+									<div class="card_footer">
+										<a class="btn" href="detail_ramen.html">
+											詳細を見る
+										</a>
+										<time datetime="2024-11-16">
+											2024/11/16
+										</time>
+									</div>
+								</div>
+							</article>
+						</div>
+					</section>
 				</div>
 			</main>
-			<aside>
-				<div class="sns">
-					<div class="sns-title">
-						<h3>
-							SNS
-						</h3>
-					</div>
-					<div class="sns-list">
-						<a href="https://page.line.me/278bybwt">
-							<img class="sns-img" src="img/公式LINE.jpg" alt="公式LINE">
-						</a>
-						<a href="https://www.instagram.com/ko.0504.ak?igsh=Z3p5bnlqeGJwYmcy&utm_source=qr">
-							<img class="sns-img" src="img/instagram.jpg" alt="instagram">
-						</a>
-						<a href="https://x.com/ak_0504_ko?s=21&t=8mCpP2aYkKoC19iTNF282Q">
-							<img class="sns-img" src="img/X(旧twitter).jpg" alt="X(旧twitter)">
-						</a>
-						<a href="https://www.facebook.com/share/18Qd5EebUt/?mibextid=wwXIfr">
-							<img class="sns-img" src="img/facebook.jpg" alt="facebook">
-						</a>
-					</div>
-				</div>
-				<div class="another">
-					<div class="another-title">
-						<h3>
-							その他
-						</h3>
-					</div>
-					<div class="another-list">
-						<ul>
-							<li>
-								<a href="#">
-									<span>●</span>
-									プロフィール
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span>●</span>
-									新着情報
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span>●</span>
-									ランキング
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span>●</span>
-									お問合せはこちらから
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</aside>
+			<!--aside挿入ポイント-->
+			<div id="aside_placeholder">
+			</div>
 		</div>
-		<footer>
-			<a href="#">
-				お問合せ
-			</a>
-			<a href="#">
-				プライバシーポリシー
-			</a>
-			<a href="#">
-				免責事項
-			</a>
-			<p>
-				@2025 ak_970504_ko .All rights reserved.
-			</p>
-		</footer>
+		<!--footer挿入ポイント-->
+		<div id="footer_placeholder">
+		</div>
 	</body>
 </html>

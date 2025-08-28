@@ -18,10 +18,14 @@ body {
 .layout {
 	display: flex;
 	box-sizing: border-box;
+	align-items: flex-start;
+	gap: 0;
 }
 main {
 	box-sizing: border-box;
 	order: 2;
+	flex: 0 1 auto;
+	margin: 0 auto;
 }
 .contact_title {
 	text-align: center;
@@ -44,7 +48,7 @@ main {
 .type_item span, .name_01_item span, .name_02_item span, .email_item span, .message_item span, .picture_item span {
 	color: rgba(255, 0, 0, 1);
 }
-.type-item-label {
+.type_item_label {
 	display: flex;
 	gap: 10px;
 	flex-wrap: nowrap;
@@ -131,5 +135,7 @@ input[type="file"] {
 	box-shadow: 0 2px 0 rgba(0, 200, 0, 1);
 }
 #aside_placeholder {
+	width: 25%;
 	order: 1;
+	margin: 0;
 }

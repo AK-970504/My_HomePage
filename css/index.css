@@ -50,5 +50,8 @@ main {
 	order: 2;
 }
 #aside_placeholder {
+	width: 25%;
 	order: 1;
+	margin: 0;
+	border: 1px solid;
 }

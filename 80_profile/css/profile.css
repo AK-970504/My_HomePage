@@ -18,10 +18,14 @@ body {
 .layout {
 	display: flex;
 	box-sizing: border-box;
+	align-items: flex-start;
+	gap: 0;
 }
 main {
 	box-sizing: border-box;
 	order: 2;
+	flex: 1 1 auto;
+	margin: 0;
 }
 .profile_title {
 	text-align: center;
@@ -86,5 +90,7 @@ main {
 	font-weight: bold;
 }
 #aside_placeholder {
+	width: 25%;
 	order: 1;
+	margin: 0;
 }

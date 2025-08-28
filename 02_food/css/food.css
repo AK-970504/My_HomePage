@@ -1,0 +1,262 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	user-select: none;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+.layout {
+	display: flex;
+	box-sizing: border-box;
+	align-items: flex-start;
+	gap: 0;
+}
+main {
+	box-sizing: border-box;
+	order: 2;
+	flex: 0 1 50%;
+	margin: 20px auto 0 auto;
+	padding: 0 20px 20px 20px;
+	align-items: center;
+	justify-content: center;
+}
+.food_menu_list {
+	margin-bottom: 20px;
+}
+.food_menu_list ul {
+	display: flex;
+	justify-content: center;
+}
+.food_menu_list ul li {
+	width: 10ch;
+	font-size: 25px;
+	text-align: center;
+	border-top: 1px solid;
+	border-left: 1px solid;
+	border-bottom: 1px solid;
+}
+.food_menu_list ul li:last-child {
+	border-right: 1px solid;
+}
+.food_menu_list ul li a {
+	display: block;
+	cursor: pointer;
+	padding: 5px 0;
+	background-color: rgba(255, 100, 255, 0.5);
+}
+.food_menu_list ul li a:hover {
+	background-color: rgba(255, 100, 255, 1);
+}
+.news_list {
+	border: 5px dotted rgba(255, 145, 250, 1);
+}
+.cards {
+	display: grid;
+	grid-template-columns: repeat(3, 300px);
+	gap: 10px;
+	margin: 10px;
+	padding: 5px;
+	width: auto;
+	justify-content: start;
+	grid-auto-flow: row;
+	align-items: stretch;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	padding: 10px;
+	border: 1px solid rgba(150, 150, 150, 1);
+	border-radius: 10px;
+	box-sizing: border-box;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+	transition: box-shadow 0.5s ease;
+	height: 100%;
+}
+.card:hover {
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.75);
+}
+.card.active {
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+	transition: box-shadow 0s ease;
+}
+.card_thumb {
+	height: 10em;
+	position: relative;
+}
+.card_thumb span {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	background-color: rgba(0, 0, 0, 1);
+	color: rgba(255, 255, 255, 1);
+	padding: 0 5px;
+	border-radius: 5px;
+	font-size: 15px;
+}
+#card_thumb_250826_01 {
+	background-image: url(/02_food/04_suiitu/250826_01/img/250826_0456.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+#card_thumb_250820_01 {
+	background-image: url(/02_food/02_yousyoku/250820_01/img/250820_1205.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+#card_thumb_250813_01 {
+	background-image: url(/02_food/09_sonota/250813_01/img/250815_2034.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+#card_thumb_250713_01 {
+	background-image: url(/02_food/03_chuuka/250713_01/img/250713_1807.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+#card_thumb_250426_01 {
+	background-image: url(/02_food/05_osake/250426_01/img/250426_1847.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+#card_thumb_250118_01 {
+	background-image: url(/02_food/03_chuuka/250118_01/img/250118_1308.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+#card_thumb_241216_01 {
+	background-image: url(/02_food/03_chuuka/241216_01/img/241216_2020.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+#card_thumb_241210_01 {
+	background-image: url(/02_food/03_chuuka/241210_01/img/241210_1257.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+#card_thumb_241125_01 {
+	background-image: url(/02_food/01_wasyoku/241125_01/img/241125_1236.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+#card_thumb_241122_02 {
+	background-image: url(/02_food/03_chuuka/241122_01/img/241122_1205.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+#card_thumb_241122_01 {
+	background-image: url(/02_food/01_wasyoku/241122_01/img/241122_1205.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+#card_thumb_241119_01 {
+	background-image: url(/02_food/01_wasyoku/241119_01/img/241119_1255.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+#card_thumb_241117_01 {
+	background-image: url(/02_food/01_wasyoku/241117_01/img/241117_0014.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+#card_thumb_241116_01 {
+	background-image: url(/02_food/03_chuuka/241116_01/img/241116_2034.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+.card_body {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+.card_body p {
+	font-size: 12.5px;
+}
+.card_title_new, .card_title_old {
+	font-size: 20px;
+}
+.card_title_new::after {
+	content: "NEW";
+	display: inline-block;
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 5px;
+	background: linear-gradient(90deg, rgba(225, 0, 0, 1), rgba(255, 100, 0, 1), rgba(255, 225, 0, 1), rgba(0, 255, 0, 1), rgba(0, 255, 255, 1), rgba(0, 0, 255, 1), rgba(150, 0, 255, 1), rgba(225, 0, 0, 1));
+	background-size: 200% 100%;
+	background-position: 0% 50%;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: transparent;
+	animation: rainbow 5s linear infinite;
+}
+@keyframes rainbow {
+	0% { 
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 200% 50%;
+	}
+}
+.card_content {
+	margin-bottom: 15px;
+	flex: 1;
+}
+.card_footer {
+	margin-top: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.btn {
+	background-color: rgba(255, 100, 0, 0.5);
+	padding: 0	5px;
+}
+.btn:hover {
+	background-color: rgba(255, 100, 0, 1);
+}
+time {
+	float: right;
+}
+#aside_placeholder {
+	width: 25%;
+	order: 1;
+	margin: 0;
+}

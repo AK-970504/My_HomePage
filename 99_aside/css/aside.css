@@ -1,11 +1,11 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 aside {
 	order: 1;
-	width: 75%;
+	width: 100%;
 	box-sizing: border-box;
 }
 .sns {
