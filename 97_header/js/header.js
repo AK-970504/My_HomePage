@@ -244,6 +244,11 @@ function initBurgerMenu() {
 		burgerLines.forEach(line => {
 			line.style.backgroundColor = "rgba(225, 225, 225, 1)"
 		});
+	} else {
+		const burgerLines = burger.querySelectorAll('span');
+		burgerLines.forEach(line => {
+			line.style.backgroundColor = "rgba(0, 0, 0, 1)"
+		});
 	}
 	// ハンバーガーメニューのトグル処理
 	burger.addEventListener('click', (event) => {

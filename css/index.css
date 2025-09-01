@@ -2,7 +2,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	user-select: none;
 }
 li {
 	list-style: none;
@@ -53,5 +52,4 @@ main {
 	width: 25%;
 	order: 1;
 	margin: 0;
-	border: 1px solid;
 }

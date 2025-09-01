@@ -53,3 +53,19 @@ fetch('/99_aside/aside.html').then(res => res.text()).then(data => {
 	document.body.appendChild(asideJS);
 })
 .catch(err => console.error('読み込みエラー:', err));
+document.addEventListener("DOMContentLoaded", () => {
+	const buttons = document.querySelectorAll(".card .btn");
+	buttons.forEach(btn => {
+		btn.addEventListener("click", (e) => {
+			const card = btn.closest(".card");
+			const href = btn.getAttribute("href");
+			//すべてのカードからactiveを外す
+			document.querySelectorAll(".card").forEach(c => c.classList.remove("active"));
+			//クリックしたカードだけactiveを付与
+			card.classList.add("active");
+			setTimeout(() => {
+				window.location.href = href;
+			}, 1000);
+		});
+	});
+});
